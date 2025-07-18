@@ -38,6 +38,7 @@ To run the backend:
 - **Express.js** – `npm install express`
 - **Cors** – `npm install express cors`
 - **Nodemon** – `npm install nodemon --save-dev`
+- **Mongoose** – `npm install mongoose`
 
 ## Configuration dependencies
 *You also don't have to configure these as it is already handled by the package.json, these are just the configurations I did when first creating the project*
