@@ -26,8 +26,13 @@ To run the backend:
 ### Frontend
 - **React (Vite)** – `npm create vite@latest`
 - **Tailwind CSS (Vite)** – `npm install tailwindcss @tailwindcss/vite`
+- **Axios** – `npm install axios`
 - **Types Nodes** – `npm install -D @types/node`
 - **UI Shadcn** – `npm install -D @types/node`
+  - **Input** – `npx shadcn@latest add input`
+  - **Label** – `npx shadcn@latest add label`
+  - **Button** – `npx shadcn@latest add button`
+  - **Alert** – `npx shadcn@latest add alert`
 
 ### Backend
 - **Express.js** – `npm install express`
