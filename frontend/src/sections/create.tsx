@@ -61,6 +61,16 @@ export const CreateSection = () => {
         });
         setIsCreateNewUserButtonEnabled(false);
 
+        // Empty input validation
+        if (!createName || !createAge || !createAddress) {
+            setSubmitNewUserFeedback({
+                message: "All fields are required",
+                type: "error"
+            }) ;
+            setIsCreateNewUserButtonEnabled(true);
+            return;
+        }
+
         // Validates if age is 0 or negative
         if (parseInt(createAge) < 1) {
             setSubmitNewUserFeedback({
