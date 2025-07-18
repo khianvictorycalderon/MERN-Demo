@@ -6,6 +6,10 @@ This is my first project using MERN stack which are:
 - React
 - NodeJS
 
+Other libraries used:
+- Nodes Type
+- UI Shadcn
+
 To run the frontend project:
 1. `cd frontend`
 2. `npm install` (If you haven't have node_modules folder yet)
@@ -22,6 +26,8 @@ To run the backend:
 ### Frontend
 - **React (Vite)** – `npm create vite@latest`
 - **Tailwind CSS (Vite)** – `npm install tailwindcss @tailwindcss/vite`
+- **Types Nodes** – `npm install -D @types/node`
+- **UI Shadcn** – `npm install -D @types/node`
 
 ### Backend
 - **Express.js** – `npm install express`
@@ -41,16 +47,28 @@ export default defineConfig({
   ],
 })
 ```
+
+- Updated `frontend/tsconfig.json` configuration:
+```
+"compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+```
+
+- Updated `frontend/vite.config.ts` configuration:
+```
+plugin: [],
+resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+```
+
 - Updated `backend/package.json` configuration:
-
-Changed this part from this:
-```
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1"
-}
-```
-
-to this:
 ```
 "scripts": {
   "server": "nodemon index.js"
