@@ -1,17 +1,28 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/user_schema");
 
-router.post("/users/new", (req, res) => {
-    if (parseInt(req.body.age) < 18) {
+router.post("/users/new", async (req, res) => {
+    const { name, age, address } = req.body;
+
+    try {
+        const newUser = new User({ name, age, address });
+        await newUser.save();
+
+        const type = age < 18 ? "warning" : "success";
+        const message = age < 18
+            ? "User successfully created but is minor (saved in DB)"
+            : "User successfully created (saved in DB)";
+
         res.status(201).json({
-            message: "Success, but minor (from server)",
-            type: "warning"
+            message: message,
+            type: type
         });
-    } else {
-        res.status(201).json({
-            message: "Success (from server)",
-            type: "success"
-        });
+    } catch (error) {
+        res.status(400).json({
+            message: "Failed to create user: " + error.message,
+            type: "error"
+        })
     }
 });
 
