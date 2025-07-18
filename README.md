@@ -36,6 +36,7 @@ To run the backend:
 
 ### Backend
 - **Express.js** – `npm install express`
+- **Cors** – `npm install express cors`
 - **Nodemon** – `npm install nodemon --save-dev`
 
 ## Configuration dependencies

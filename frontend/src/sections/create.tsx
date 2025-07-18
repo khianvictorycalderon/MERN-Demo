@@ -83,23 +83,16 @@ export const CreateSection = () => {
         
         // If passed
         try {
-            await axios.post(`${backendPath}/users/new`, {
+            const res = await axios.post(`${backendPath}/users/new`, {
                 name: createName,
                 age: createAge,
                 address: createAddress
             });
             
-            if (parseInt(createAge) < 18) {
-                setSubmitNewUserFeedback({
-                    message: "WARNING: User created but you are a minor.",
-                    type: "warning"
-                })
-            } else {
-                setSubmitNewUserFeedback({
-                    message: "Successfully submitted",
-                    type: "success"
-                })
-            }
+            setSubmitNewUserFeedback({
+                message: res.data.message,
+                type: res.data.type
+            })
 
             setCreateName("");
             setCreateAge("");
