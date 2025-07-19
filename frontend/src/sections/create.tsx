@@ -93,7 +93,7 @@ export const CreateSection = () => {
         
         // If passed
         try {
-            const res = await axios.post(`${backendPath}/users/create`, {
+            const res = await axios.post(`${backendPath}/users`, {
                 name: createName,
                 age: createAge,
                 address: createAddress

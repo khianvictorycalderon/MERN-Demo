@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user_schema");
 
-router.post("/users/create", async (req, res) => {
+// Create
+router.post("/users", async (req, res) => {
     const { name, age, address } = req.body;
 
     try {
@@ -23,6 +24,16 @@ router.post("/users/create", async (req, res) => {
             message: "Failed to create user: " + error.message,
             type: "error"
         })
+    }
+});
+
+// Read
+router.get("/users", async (_, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json({ users });
+    } catch (error) {
+        res.status(500);
     }
 });
 

@@ -1,4 +1,5 @@
 import { CreateSection } from "./sections/create";
+import { ReadSection } from "./sections/read";
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
         <hr className="mb-4 md:mb-4"/>
         
         <CreateSection />
+        <ReadSection />
 
       </div>
     </div>
