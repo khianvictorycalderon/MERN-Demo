@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user_schema");
 
-router.post("/users/new", async (req, res) => {
+router.post("/users/create", async (req, res) => {
     const { name, age, address } = req.body;
 
     try {
