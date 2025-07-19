@@ -5,6 +5,7 @@ import axios from "axios";
 import { backendPath } from "./endpoints";
 
 interface TableDataProps {
+  _id: string;
   name: string;
   age: number;
   address: string;
@@ -31,16 +32,21 @@ export default function App() {
       <h1 className="text-center text-4xl font-extrabold tracking-tight">
         MERN stack basic CRUD
       </h1>
+
       <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
         <li>MongoDB</li>
         <li>Express JS</li>
         <li>React (Vite)</li>
-        <li>Nodejs</li>
+        <li>Node.js</li>
       </ul>
+
       <hr className="mb-4" />
 
       <CreateSection onUserCreated={fetchUsers} />
-      <ReadSection tableData={tableData} onReload={fetchUsers} />
+      <ReadSection
+        tableData={tableData}
+        onReload={fetchUsers}
+      />
     </div>
   );
 }
