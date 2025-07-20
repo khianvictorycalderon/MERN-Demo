@@ -13,12 +13,24 @@ Other libraries used:
 To run the frontend project:
 1. `cd frontend`
 2. `npm install` (If you haven't have node_modules folder yet)
-3. `npm run dev` - This starts the webpage
+3. Create a .env file inside `frontend` directory:
+  ```
+  VITE_API_DEV=http://localhost:3000/api
+  VITE_API_PROD=https://your-production-api-url
+  ```
+  - `VITE_API_DEV` is the URL where your backend server is running in development (e.g. Express API).
+  - Uncomment and configure `VITE_API_PROD` for production builds.
+4. `npm run dev` - This starts the webpage
 
 To run the backend:
 1. `cd backend`
 2. `npm install` (If you haven't have node_modules folder yet)
-3. `npm run server` - This starts the server
+3. Create a .env file inside `backend` directory:
+  ```
+  MONGODB_URI=mongodb://localhost:27017/admin
+  ```
+  Replace `MONGODB_URI` with your actual MongoDB URI as needed (e.g., for MongoDB Atlas, use your cloud URI) or use your local environment.
+4. `npm run server` - This starts the server
 
 ## Dependencies installed
 *You don't have to install these dependencies as it is handled by npm install, below are just list of dependecies I used*
