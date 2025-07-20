@@ -19,7 +19,7 @@ To run the frontend project:
   VITE_API_PROD=https://your-production-api-url
   ```
   - `VITE_API_DEV` is the URL where your backend server is running in development (e.g. Express API).
-  - Uncomment and configure `VITE_API_PROD` for production builds.
+  - Replace `VITE_API_PROD` with your actual backend URI.
 4. `npm run dev` - This starts the webpage
 
 To run the backend:
@@ -29,7 +29,7 @@ To run the backend:
   ```
   MONGODB_URI=mongodb://localhost:27017/admin
   ```
-  Replace `MONGODB_URI` with your actual MongoDB URI as needed (e.g., for MongoDB Atlas, use your cloud URI) or use your local environment.
+  - Replace `MONGODB_URI` with your actual MongoDB URI as needed (e.g., for MongoDB Atlas, use your cloud URI) or use your local environment.
 4. `npm run server` - This starts the server
 
 ## Dependencies installed
